@@ -12,7 +12,7 @@
         android:title="@string/news" />
 
     <item
-        android:id="@+id/navigation_movie"
+        android:id="@+id/navigation_discover"
         android:icon="@drawable/movie"
         android:title="Discover" />
 
