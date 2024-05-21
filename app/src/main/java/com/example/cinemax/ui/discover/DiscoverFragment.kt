@@ -22,14 +22,14 @@ class DiscoverFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(CinemaViewModel::class.java)
+        val discoverViewModel =
+            ViewModelProvider(this).get(DiscoverViewModel::class.java)
 
         _binding = FragmentDiscoverBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textDashboard
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textDiscover
+        discoverViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root

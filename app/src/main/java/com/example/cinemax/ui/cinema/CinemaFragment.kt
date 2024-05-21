@@ -22,14 +22,14 @@ class CinemaFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
+        val cinemaViewModel =
             ViewModelProvider(this).get(CinemaViewModel::class.java)
 
         _binding = FragmentCinemaBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.text_cinema
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
+        val textView: TextView = binding.textCinema
+        cinemaViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
