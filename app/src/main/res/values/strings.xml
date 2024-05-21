@@ -4,4 +4,9 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="news">News</string>
+    <string name="release_year_prompt">Select Release Year</string>
+    <string name="genre_prompt">Select Genre</string>
+    <string name="sort_by_prompt">Select Sort By</string>
+    <string name="discover_button_text">Discover Movies</string>
+    <string name="movie_poster_description">Poster for the movie</string>
 </resources>
