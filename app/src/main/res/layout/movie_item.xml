@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="8dp">
-    
+
     <ImageView
         android:id="@+id/movie_poster"
         android:layout_width="match_parent"
@@ -26,5 +26,4 @@
         android:layout_height="wrap_content"
         android:textSize="14sp"
         android:paddingTop="4dp"/>
-
 </LinearLayout>

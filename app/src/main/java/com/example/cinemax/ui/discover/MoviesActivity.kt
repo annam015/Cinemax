@@ -1,9 +1,11 @@
 package com.example.cinemax.ui.discover
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.cinemax.data.Movie
 import com.example.cinemax.databinding.ActivityMoviesBinding
 
 class MoviesActivity : AppCompatActivity() {
@@ -20,12 +22,15 @@ class MoviesActivity : AppCompatActivity() {
 
         setupRecyclerView()
 
-        discoverViewModel.movies.observe(this, { movies ->
-            movies?.let {
-                moviesAdapter = MoviesAdapter(it)
-                binding.recyclerViewMovies.adapter = moviesAdapter
-            }
-        })
+        val moviesList: ArrayList<Movie>? = intent.getParcelableArrayListExtra("movies_list")
+        moviesList?.let {
+            Log.d("MoviesActivity", "Movies received: $it")
+            moviesAdapter.updateMovies(it)
+        }
+
+        // Apelarea metodei discoverMovies pentru a începe procesul de obținere a datelor
+        // Commented out because discoverMovies is already called in DiscoverFragment
+        // discoverViewModel.discoverMovies()
     }
 
     private fun setupRecyclerView() {

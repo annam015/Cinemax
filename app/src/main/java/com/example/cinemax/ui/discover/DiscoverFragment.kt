@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.cinemax.databinding.FragmentDiscoverBinding
 
@@ -31,9 +33,24 @@ class DiscoverFragment : Fragment() {
             discoverViewModel.releaseYear = binding.spinnerReleaseYear.selectedItem as String?
             discoverViewModel.genre = binding.spinnerGenre.selectedItem as String?
             discoverViewModel.sortBy = binding.spinnerSortBy.selectedItem as String?
+
+            if (discoverViewModel.releaseYear.isNullOrEmpty() || discoverViewModel.genre.isNullOrEmpty() || discoverViewModel.sortBy.isNullOrEmpty()) {
+                Toast.makeText(requireContext(), "Please select all options", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             discoverViewModel.discoverMovies()
-            val intent = Intent(activity, MoviesActivity::class.java)
-            startActivity(intent)
+
+            discoverViewModel.movies.observe(viewLifecycleOwner, Observer { movies ->
+                if (movies != null && movies.isNotEmpty()) {
+                    val intent = Intent(activity, MoviesActivity::class.java).apply {
+                        putParcelableArrayListExtra("movies_list", ArrayList(movies))
+                    }
+                    startActivity(intent)
+                } else {
+                    Toast.makeText(requireContext(), "No movies found", Toast.LENGTH_SHORT).show()
+                }
+            })
         }
 
         return root

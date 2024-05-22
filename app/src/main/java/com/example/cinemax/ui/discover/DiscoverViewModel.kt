@@ -1,5 +1,6 @@
 package com.example.cinemax.ui.discover
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -42,7 +43,19 @@ class DiscoverViewModel : ViewModel() {
                 SortByDictionary[sortOption] ?: "",
                 genreOptions[selectedGenre]?.toString() ?: ""
             )
-            _movies.postValue(movieList!!)
+
+            if(movieList != null) {
+                for (movie in movieList) {
+                    Log.d(
+                        "MoviesActivity-ViewModel",
+                        "Title: ${movie.title}, Overview: ${movie.overview}, Genres: ${movie.genres}, Release Date: ${movie.releaseDate}, Poster Path: ${movie.posterPath}, Popularity: ${movie.popularity}, Average Rating: ${movie.avgRating}, Number of Votes: ${movie.noVotes}"
+                    )
+                } // AICI STIU SIGUR CA AJUNGE PENTRU CA VAD IN LOG
+
+                _movies.postValue(movieList)
+            } else {
+                _movies.postValue(emptyList())
+            }
         }
     }
 

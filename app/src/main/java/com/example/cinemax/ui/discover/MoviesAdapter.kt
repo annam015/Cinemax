@@ -5,30 +5,39 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import com.example.cinemax.data.Movie
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cinemax.R
+import com.example.cinemax.data.Movie
 import com.squareup.picasso.Picasso
 
-class MoviesAdapter(private val movies: List<Movie>) : RecyclerView.Adapter<MoviesAdapter.MovieViewHolder>() {
-    class MovieViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val title: TextView = view.findViewById(R.id.movie_title)
-        val overview: TextView = view.findViewById(R.id.movie_overview)
-        val poster: ImageView = view.findViewById(R.id.movie_poster)
-    }
+class MoviesAdapter(private var movies: List<Movie>) : RecyclerView.Adapter<MoviesAdapter.MovieViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.movie_item, parent, false)
-        return MovieViewHolder(view)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.movie_item, parent, false)
+        return MovieViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        val movie = movies[position]
-        holder.title.text = movie.title
-        holder.overview.text = movie.overview
-        Picasso.get().load(movie.posterPath).into(holder.poster)
+        val currentMovie = movies[position]
+        holder.bind(currentMovie)
     }
 
     override fun getItemCount() = movies.size
+
+    fun updateMovies(newMovies: List<Movie>) {
+        movies = newMovies
+        notifyDataSetChanged()
+    }
+
+    class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+        private val titleTextView: TextView = itemView.findViewById(R.id.movie_title)
+        private val overviewTextView: TextView = itemView.findViewById(R.id.movie_overview)
+        private val posterImageView: ImageView = itemView.findViewById(R.id.movie_poster)
+
+        fun bind(movie: Movie) {
+            titleTextView.text = movie.title
+            overviewTextView.text = movie.overview
+            Picasso.get().load(movie.posterPath).into(posterImageView)
+        }
+    }
 }

@@ -1,12 +1,9 @@
 package com.example.cinemax.data
 
 import android.util.Log
-import android.webkit.ConsoleMessage
-import android.widget.Toast
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
-import java.io.Console
 import java.net.HttpURLConnection
 import java.net.URL
 
@@ -21,6 +18,7 @@ class DiscoverMoviesAPI(private val apiKey: String) {
             try {
                 val response = connection.inputStream.bufferedReader().readText()
                 val jsonResponse = JSONObject(response)
+                Log.d("DiscoverMoviesAPI", "Response: $jsonResponse")
                 val movieList = mutableListOf<Movie>()
 
                 val results = jsonResponse.getJSONArray("results")
