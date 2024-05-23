@@ -33,7 +33,7 @@ class DiscoverMoviesAPI(private val apiKey: String) {
                     val avgRating = item.getDouble("vote_average")
                     val noVotes = item.getInt("vote_count")
 
-                    movieList.add(Movie(title, overview, genres, releaseDate, posterPath, popularity, avgRating, noVotes))
+                    movieList.add(Movie(title, overview, releaseDate, posterPath, avgRating))
                 }
 
                 movieList

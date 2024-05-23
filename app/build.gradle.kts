@@ -56,6 +56,7 @@ dependencies {
     implementation(libs.play.services.location)
     implementation(libs.hilt.android)
     implementation(libs.androidx.databinding.runtime)
+    implementation(libs.play.services.maps)
     ksp(libs.androidx.room.compiler)
     ksp(libs.hilt.compiler)
     implementation(libs.androidx.room.common)

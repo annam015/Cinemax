@@ -40,6 +40,10 @@
             android:label="Discovered movies">
         </activity>
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAG391WJNT5uKCcODm63GyFERYRlwpl89E"/>
+
         <receiver android:name=".widget.NewsWidgetProvider"
             android:exported="true">
             <intent-filter>

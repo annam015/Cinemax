@@ -33,11 +33,15 @@ class MoviesAdapter(private var movies: List<Movie>) : RecyclerView.Adapter<Movi
         private val titleTextView: TextView = itemView.findViewById(R.id.movie_title)
         private val overviewTextView: TextView = itemView.findViewById(R.id.movie_overview)
         private val posterImageView: ImageView = itemView.findViewById(R.id.movie_poster)
+        private val releaseDateTextView: TextView = itemView.findViewById(R.id.movie_release_date)
+        private val avgRatingTextView: TextView = itemView.findViewById(R.id.movie_avg_rating)
 
         fun bind(movie: Movie) {
             titleTextView.text = movie.title
             overviewTextView.text = movie.overview
             Picasso.get().load(movie.posterPath).into(posterImageView)
+            releaseDateTextView.text = movie.releaseDate
+            avgRatingTextView.text = String.format("%.2f", movie.avgRating)
         }
     }
 }
