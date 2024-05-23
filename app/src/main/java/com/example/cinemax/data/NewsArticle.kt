@@ -2,8 +2,6 @@ package com.example.cinemax.data
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
-import java.text.SimpleDateFormat
-import java.util.*
 
 @Parcelize
 class NewsArticle(
@@ -17,5 +15,15 @@ class NewsArticle(
         imageUrl = imageUrl,
         articleUrl = articleUrl,
         content = ""
+    )
+}
+
+// Funcția de extensie trebuie să fie în afara clasei `NewsArticle`
+fun NewsArticleEntity.toNewsArticle(): NewsArticle {
+    return NewsArticle(
+        title = this.title,
+        imageUrl = this.imageUrl,
+        articleUrl = this.articleUrl,
+        content = this.content
     )
 }

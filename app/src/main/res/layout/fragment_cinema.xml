@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/mapView"
         android:layout_centerHorizontal="true"
-        android:text="Find Cinema Location"/>
+        android:text="Find Nearby Cinemas"/>
 
     <ListView
         android:id="@+id/cinemaListView"

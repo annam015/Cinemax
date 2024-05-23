@@ -75,11 +75,15 @@ class NewsWidgetProvider : AppWidgetProvider() {
                 .load(article.imageUrl)
                 .into(appWidgetTarget)
 
+            // Adăugăm un intent pentru a deschide activitatea de știri când se apasă pe widget
             val intent = Intent(context, ArticleContentActivity::class.java).apply {
                 putExtra("article", article)
             }
             val pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+
+            // Setăm intentul atât pentru imagine, cât și pentru text
             views.setOnClickPendingIntent(R.id.news_image, pendingIntent)
+            views.setOnClickPendingIntent(R.id.news_title, pendingIntent)
 
             appWidgetManager.updateAppWidget(appWidgetId, views)
         }
