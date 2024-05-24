@@ -24,15 +24,15 @@ class HomeFragment : Fragment() {
         val root = binding.root
 
         binding.cardNews.setOnClickListener {
-            findNavController().navigate(R.id.ToNewsFragment, null, NavOptions.Builder().setPopUpTo(R.id.navigation_home, false).build())
+            findNavController().navigate(R.id.ToNewsFragment, null, NavOptions.Builder().setPopUpTo(R.id.navigation_home, true).build())
         }
 
         binding.cardDiscoverMovies.setOnClickListener {
-            findNavController().navigate(R.id.ToDiscoverMoviesFragment, null, NavOptions.Builder().setPopUpTo(R.id.navigation_home, false).build())
+            findNavController().navigate(R.id.ToDiscoverMoviesFragment, null, NavOptions.Builder().setPopUpTo(R.id.navigation_home, true).build())
         }
 
         binding.cardMaps.setOnClickListener {
-            findNavController().navigate(R.id.ToCinemaFragment, null, NavOptions.Builder().setPopUpTo(R.id.navigation_home, false).build())
+            findNavController().navigate(R.id.ToCinemaFragment, null, NavOptions.Builder().setPopUpTo(R.id.navigation_home, true).build())
         }
 
         return root
