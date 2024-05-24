@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cinemax.R
 import com.example.cinemax.data.NewsArticle
@@ -59,7 +60,7 @@ class NewsArticleAdapter : RecyclerView.Adapter<NewsArticleAdapter.NewsArticleVi
                         intent.putExtra("article", newsArticle)
                         context.startActivity(intent)
                     } else {
-                        // Afișează un mesaj de eroare sau tratează eroarea corespunzător
+                        Toast.makeText(context, "Failed to load the article content. Please try again later.", Toast.LENGTH_LONG).show()
                     }
                 }
             }

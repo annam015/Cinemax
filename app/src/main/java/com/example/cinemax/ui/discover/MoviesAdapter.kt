@@ -1,5 +1,6 @@
 package com.example.cinemax.ui.discover
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,6 +34,7 @@ class MoviesAdapter(private var movies: List<Movie>) : RecyclerView.Adapter<Movi
         private val titleTextView: TextView = itemView.findViewById(R.id.movie_title)
         private val overviewTextView: TextView = itemView.findViewById(R.id.movie_overview)
         private val posterImageView: ImageView = itemView.findViewById(R.id.movie_poster)
+        private val genresTextView: TextView = itemView.findViewById(R.id.movie_genres);
         private val releaseDateTextView: TextView = itemView.findViewById(R.id.movie_release_date)
         private val avgRatingTextView: TextView = itemView.findViewById(R.id.movie_avg_rating)
 
@@ -40,6 +42,8 @@ class MoviesAdapter(private var movies: List<Movie>) : RecyclerView.Adapter<Movi
             titleTextView.text = movie.title
             overviewTextView.text = movie.overview
             Picasso.get().load(movie.posterPath).into(posterImageView)
+            //Log.d("Movie genre", movie.genres)
+            genresTextView.text = movie.genres
             releaseDateTextView.text = movie.releaseDate
             avgRatingTextView.text = String.format("%.2f", movie.avgRating)
         }

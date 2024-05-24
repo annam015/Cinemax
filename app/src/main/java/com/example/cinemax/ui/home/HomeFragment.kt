@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.example.cinemax.R
 import com.example.cinemax.databinding.FragmentHomeBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeFragment : Fragment() {
 
@@ -22,15 +24,15 @@ class HomeFragment : Fragment() {
         val root = binding.root
 
         binding.cardNews.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_newsFragment)
+            findNavController().navigate(R.id.ToNewsFragment, null, NavOptions.Builder().setPopUpTo(R.id.navigation_home, false).build())
         }
 
         binding.cardDiscoverMovies.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_discoverMoviesFragment)
+            findNavController().navigate(R.id.ToDiscoverMoviesFragment, null, NavOptions.Builder().setPopUpTo(R.id.navigation_home, false).build())
         }
 
         binding.cardMaps.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_mapsFragment)
+            findNavController().navigate(R.id.ToCinemaFragment, null, NavOptions.Builder().setPopUpTo(R.id.navigation_home, false).build())
         }
 
         return root

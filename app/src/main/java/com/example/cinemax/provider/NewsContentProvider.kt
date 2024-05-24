@@ -54,17 +54,14 @@ class NewsContentProvider : ContentProvider() {
         selection: String?,
         selectionArgs: Array<out String>?
     ): Int {
-        // Implement update if necessary
         return 0
     }
 
     override fun delete(uri: Uri, selection: String?, selectionArgs: Array<out String>?): Int {
-        // Implement delete if necessary
         return 0
     }
 
     override fun getType(uri: Uri): String? {
-        // Return the MIME type if necessary
         return null
     }
 }

@@ -20,7 +20,7 @@ class NewsViewModel : ViewModel() {
     private fun fetchArticles() {
         viewModelScope.launch {
             val articlesList = NewsWebScraping().getArticles()
-            _articles.postValue(articlesList)
+            _articles.postValue(articlesList!!)
         }
     }
 }

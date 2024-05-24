@@ -24,13 +24,8 @@ class MoviesActivity : AppCompatActivity() {
 
         val moviesList: ArrayList<Movie>? = intent.getParcelableArrayListExtra("movies_list")
         moviesList?.let {
-            Log.d("MoviesActivity", "Movies received: $it")
             moviesAdapter.updateMovies(it)
         }
-
-        // Apelarea metodei discoverMovies pentru a începe procesul de obținere a datelor
-        // Commented out because discoverMovies is already called in DiscoverFragment
-        // discoverViewModel.discoverMovies()
     }
 
     private fun setupRecyclerView() {

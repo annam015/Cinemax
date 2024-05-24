@@ -43,7 +43,7 @@ class NewsWebScraping {
         return withContext(Dispatchers.IO) {
             try {
                 val doc: Document = Jsoup.connect(newsArticle.articleUrl).get()
-                val paragraphs = doc.select("p")
+                val paragraphs = doc.select("p.paragraph")
 
                 if (paragraphs != null) {
                     val content = StringBuilder()

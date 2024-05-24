@@ -18,7 +18,7 @@ class DiscoverMoviesAPI(private val apiKey: String) {
             try {
                 val response = connection.inputStream.bufferedReader().readText()
                 val jsonResponse = JSONObject(response)
-                Log.d("DiscoverMoviesAPI", "Response: $jsonResponse")
+                //Log.d("DiscoverMoviesAPI", "Response: $jsonResponse")
                 val movieList = mutableListOf<Movie>()
 
                 val results = jsonResponse.getJSONArray("results")
@@ -26,14 +26,14 @@ class DiscoverMoviesAPI(private val apiKey: String) {
                     val item = results.getJSONObject(i)
                     val title = item.getString("title")
                     val overview = item.getString("overview")
-                    val genres = item.getJSONArray("genre_ids").join(", ")
+                    val genreIds = item.getJSONArray("genre_ids") // debugg: genreIds = [82,96,24]
+                    val genres = (0 until genreIds.length()).map { genreIds.getInt(it) }
+                        .mapNotNull { id -> genreOptions.entries.firstOrNull {it.value == id}?.key }.joinToString(", ")
                     val releaseDate = item.getString("release_date")
                     val posterPath = "https://image.tmdb.org/t/p/w500" + item.getString("poster_path")
-                    val popularity = item.getDouble("popularity")
                     val avgRating = item.getDouble("vote_average")
-                    val noVotes = item.getInt("vote_count")
 
-                    movieList.add(Movie(title, overview, releaseDate, posterPath, avgRating))
+                    movieList.add(Movie(title, overview, genres, releaseDate, posterPath, avgRating))
                 }
 
                 movieList

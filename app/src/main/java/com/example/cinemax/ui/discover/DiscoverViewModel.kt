@@ -32,7 +32,6 @@ class DiscoverViewModel : ViewModel() {
         val sortOption = sortBy ?: ""
 
         if (year.isEmpty() || selectedGenre.isEmpty() || sortOption.isEmpty()) {
-            // Show error message
             return
         }
 
@@ -45,7 +44,7 @@ class DiscoverViewModel : ViewModel() {
             )
 
             if(movieList != null) {
-                _movies.postValue(movieList)
+                _movies.postValue(movieList!!)
             } else {
                 _movies.postValue(emptyList())
             }

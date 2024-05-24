@@ -52,7 +52,7 @@ class NewsUpdateService : Service() {
                         }
                         updateWidget()
                     }
-                    Thread.sleep(60000) // Pauză de un minut
+                    Thread.sleep(60000)
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }

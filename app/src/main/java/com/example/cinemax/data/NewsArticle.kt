@@ -17,8 +17,6 @@ class NewsArticle(
         content = ""
     )
 }
-
-// Funcția de extensie trebuie să fie în afara clasei `NewsArticle`
 fun NewsArticleEntity.toNewsArticle(): NewsArticle {
     return NewsArticle(
         title = this.title,

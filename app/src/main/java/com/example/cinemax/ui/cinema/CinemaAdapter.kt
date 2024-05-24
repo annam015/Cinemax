@@ -37,7 +37,6 @@ class CinemaAdapter(private val context: Context, private val dataSource: List<S
 
         cinemaName.text = details[0]
 
-        // Set icons if needed (assuming the drawable resources are available)
         pinIcon.setImageResource(R.drawable.marker)
         arrowIcon.setImageResource(R.drawable.arrow)
 
