@@ -8,7 +8,6 @@ import android.content.Intent
 import android.os.IBinder
 import com.example.cinemax.data.NewsArticleEntity
 import com.example.cinemax.data.NewsDatabase
-import com.example.cinemax.data.NewsWebScraping
 import com.example.cinemax.data.toNewsArticle
 import com.example.cinemax.provider.NewsContentProvider
 import com.example.cinemax.widget.NewsWidgetProvider

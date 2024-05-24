@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.cinemax.databinding.FragmentCinemaBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -29,6 +28,7 @@ class CinemaFragment : Fragment(), OnMapReadyCallback {
 
     private lateinit var fusedLocationProviderClient: FusedLocationProviderClient
     private var _binding: FragmentCinemaBinding? = null
+
     private val binding get() = _binding!!
     private lateinit var googleMap: GoogleMap
     private lateinit var mapView: MapView
@@ -70,7 +70,6 @@ class CinemaFragment : Fragment(), OnMapReadyCallback {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val cinemaViewModel = ViewModelProvider(this).get(CinemaViewModel::class.java)
         _binding = FragmentCinemaBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
@@ -140,7 +139,7 @@ class CinemaFragment : Fragment(), OnMapReadyCallback {
     }
 
     private fun calculateDistance(lat1: Double, lon1: Double, lat2: Double, lon2: Double): Double {
-        val earthRadius = 6371 // Kilometers
+        val earthRadius = 6371
         val dLat = Math.toRadians(lat2 - lat1)
         val dLon = Math.toRadians(lon2 - lon1)
         val a = sin(dLat / 2) * sin(dLat / 2) +
@@ -176,7 +175,7 @@ class CinemaFragment : Fragment(), OnMapReadyCallback {
         if (requestCode == 101 && grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
             fetchLocation()
         } else {
-            Toast.makeText(requireContext(), "Permission denied", Toast.LENGTH_SHORT).show()
+            Toast.makeText(requireContext(), "Permission denied", Toast.LENGTH_LONG).show()
         }
     }
 }

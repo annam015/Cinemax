@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cinemax.R
 import com.example.cinemax.data.NewsArticle
-import com.example.cinemax.data.NewsWebScraping
+import com.example.cinemax.service.NewsWebScraping
 import com.bumptech.glide.Glide
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

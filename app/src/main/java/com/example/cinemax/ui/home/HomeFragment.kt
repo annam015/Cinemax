@@ -9,7 +9,6 @@ import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import com.example.cinemax.R
 import com.example.cinemax.databinding.FragmentHomeBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class HomeFragment : Fragment() {
 

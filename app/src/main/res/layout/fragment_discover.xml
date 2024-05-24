@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="50dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
         app:layout_constraintTop_toTopOf="parent"
@@ -29,17 +29,17 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Discover Movies"
+                android:text="@string/discover_movies"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="50dp"/>
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="35dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Year:"
+                android:text="@string/year"
                 android:textSize="16sp"
                 android:layout_marginBottom="8dp"/>
 
@@ -53,7 +53,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Genre:"
+                android:text="@string/genre"
                 android:textSize="16sp"
                 android:layout_marginBottom="8dp"/>
 
@@ -67,7 +67,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sort by:"
+                android:text="@string/sort_by"
                 android:textSize="16sp"
                 android:layout_marginBottom="8dp"/>
 
@@ -82,7 +82,7 @@
                 android:id="@+id/discover_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/discover_button_text"
+                android:text="@string/discover_movies"
                 android:layout_gravity="center"/>
 
             <LinearLayout
@@ -97,17 +97,17 @@
                     android:layout_height="24dp"
                     android:src="@drawable/info"
                     tools:ignore="ContentDescription"
-                    android:layout_marginTop="52dp"
-                    android:tint="@color/grey_2"/>
+                    android:layout_marginTop="42dp"
+                    app:tint="@color/grey_2"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Use the filters above to discover movies based on your preferences. Select the release year, genre, and how you'd like to sort the results, then click 'Discover' to see the movies that match your criteria."
+                    android:text="@string/info_discover_movies"
                     android:textSize="16sp"
                     android:paddingStart="15dp"
                     android:paddingLeft="5dp"
-                    android:layout_marginTop="55dp"/>
+                    android:layout_marginTop="45dp"/>
             </LinearLayout>
 
         </LinearLayout>

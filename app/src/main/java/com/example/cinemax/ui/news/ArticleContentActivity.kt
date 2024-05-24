@@ -6,8 +6,8 @@ import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
 import com.example.cinemax.R
 import com.example.cinemax.data.NewsArticle
-import com.example.cinemax.data.NewsWebScraping
 import com.example.cinemax.databinding.ActivityArticleContentBinding
+import com.example.cinemax.service.NewsWebScraping
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

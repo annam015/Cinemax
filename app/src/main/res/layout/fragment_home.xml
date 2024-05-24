@@ -16,7 +16,6 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:scaleType="centerCrop"
-            android:layout_marginTop="15dp"
             android:src="@drawable/banner"
             tools:ignore="ContentDescription" />
 
@@ -24,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Welcome to Cinemax!"
+            android:text="@string/welcome_to_cinemax"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -32,15 +31,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Cinemax is your go-to app for the latest movie news, discovering new films to watch, and finding nearby cinemas. Explore the app to discover all the features we offer:"
+            android:text="@string/cinemax_description"
             android:textSize="16sp"/>
 
-        <!-- Key Features Cards -->
         <androidx.cardview.widget.CardView
             android:id="@+id/card_news"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             app:cardCornerRadius="8dp"
             app:cardElevation="4dp"
             android:backgroundTint="@color/purple_200">
@@ -78,7 +76,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="News"
+                        android:text="@string/news"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="@color/grey_2"/>
@@ -86,7 +84,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Latest movie news from IMDb."
+                        android:text="@string/latest_movie_imdb"
                         android:textSize="14sp"
                         android:layout_marginTop="4dp"
                         android:textColor="@color/grey_2"/>
@@ -110,7 +108,7 @@
             android:id="@+id/card_discover_movies"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             app:cardCornerRadius="8dp"
             app:cardElevation="4dp"
             android:backgroundTint="@color/purple_500">
@@ -147,14 +145,14 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Discover Movies"
+                        android:text="@string/discover_movies"
                         android:textSize="18sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Find movies by year, genre, and popularity."
+                        android:text="@string/find_movies_by"
                         android:textSize="14sp"
                         android:layout_marginTop="4dp" />
                 </LinearLayout>
@@ -176,7 +174,7 @@
             android:id="@+id/card_maps"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             app:cardCornerRadius="8dp"
             app:cardElevation="4dp"
             android:backgroundTint="@color/purple_700">
@@ -222,7 +220,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Find nearby cinemas on the map."
+                        android:text="@string/find_nearby_cinemas_map"
                         android:textSize="14sp"
                         android:layout_marginTop="4dp"
                         android:textColor="@color/grey_1" />

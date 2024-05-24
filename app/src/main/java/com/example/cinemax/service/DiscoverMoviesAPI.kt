@@ -1,6 +1,6 @@
-package com.example.cinemax.data
+package com.example.cinemax.service
 
-import android.util.Log
+import com.example.cinemax.data.Movie
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
@@ -18,7 +18,6 @@ class DiscoverMoviesAPI(private val apiKey: String) {
             try {
                 val response = connection.inputStream.bufferedReader().readText()
                 val jsonResponse = JSONObject(response)
-                //Log.d("DiscoverMoviesAPI", "Response: $jsonResponse")
                 val movieList = mutableListOf<Movie>()
 
                 val results = jsonResponse.getJSONArray("results")
@@ -26,7 +25,7 @@ class DiscoverMoviesAPI(private val apiKey: String) {
                     val item = results.getJSONObject(i)
                     val title = item.getString("title")
                     val overview = item.getString("overview")
-                    val genreIds = item.getJSONArray("genre_ids") // debugg: genreIds = [82,96,24]
+                    val genreIds = item.getJSONArray("genre_ids")
                     val genres = (0 until genreIds.length()).map { genreIds.getInt(it) }
                         .mapNotNull { id -> genreOptions.entries.firstOrNull {it.value == id}?.key }.joinToString(", ")
                     val releaseDate = item.getString("release_date")

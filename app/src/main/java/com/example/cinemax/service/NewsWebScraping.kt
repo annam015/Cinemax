@@ -1,5 +1,6 @@
-package com.example.cinemax.data
+package com.example.cinemax.service
 
+import com.example.cinemax.data.NewsArticle
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.jsoup.Jsoup

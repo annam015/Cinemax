@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.AppWidgetTarget
 import com.example.cinemax.R
 import com.example.cinemax.data.NewsArticle
-import com.example.cinemax.data.NewsWebScraping
+import com.example.cinemax.service.NewsWebScraping
 import com.example.cinemax.ui.news.ArticleContentActivity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

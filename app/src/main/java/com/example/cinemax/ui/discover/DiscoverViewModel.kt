@@ -1,11 +1,11 @@
 package com.example.cinemax.ui.discover
 
-import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.cinemax.data.DiscoverMoviesAPI
+import com.example.cinemax.service.DiscoverMoviesAPI
 import com.example.cinemax.data.Movie
 import kotlinx.coroutines.launch
 
@@ -30,10 +30,6 @@ class DiscoverViewModel : ViewModel() {
         val year = releaseYear ?: ""
         val selectedGenre = genre ?: ""
         val sortOption = sortBy ?: ""
-
-        if (year.isEmpty() || selectedGenre.isEmpty() || sortOption.isEmpty()) {
-            return
-        }
 
         viewModelScope.launch {
             val movieList = discoverMoviesAPI.getMovies(
