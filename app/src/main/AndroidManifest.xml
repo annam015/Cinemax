@@ -43,7 +43,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAG391WJNT5uKCcODm63GyFERYRlwpl89E"/>
+            android:value=YOUR_GOOGLE_API_KEY/>
 
         <receiver android:name=".widget.NewsWidgetProvider"
             android:exported="true">
